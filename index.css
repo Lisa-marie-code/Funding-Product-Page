@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Commissioner", sans-serif;
+  background-color: #fafafa;
+}
+:root {
+  --primary-light: hsl(176, 50%, 47%);
+  --primary-dark: hsl(176, 72%, 28%);
+  --neutral-dark: hsl(0, 0%, 0%);
+  --neutral-light: hsl(0, 0%, 48%);
+  --neutral-lighter: hsl(0, 0%, 87%);
+  --neutral-lightest: hsl(0, 0%, 96%);
+  --spacer: 1rem;
+  --neutral-white: #fff;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .container {
+    width: 375px;
+  }
+
+  /* header styles */
+  header {
+    background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%),
+      url(/images/image-hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    height: 76vw;
+  }
+  /* nav styles */
+
+  .nav-list {
+    gap: 0;
+    justify-content: center;
+    background: var(--neutral-white);
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: 0.5rem;
+    display: none;
+  }
+  .nav-item {
+    flex-basis: unset;
+    padding-block: 0;
+  }
+  .nav-flex {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacer);
+  }
+  .nav-item {
+    flex-basis: unset;
+    padding-block: 0;
+    border-top: 1px solid var(--neutral-lighter);
+  }
+  .nav-link {
+    display: inline-block;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+    text-decoration: none;
+  }
+  .nav-list.open {
+    display: block;
+  }
+  /* main */
+  /* section */
+  main {
+    margin-top: -3.5rem;
+  }
+  section {
+    margin-bottom: 1.5rem;
+    background-color: var(--neutral-white);
+    border-radius: 0.5rem;
+    border: 1px solid var(--neutral-lighter);
+    margin: auto;
+    width: 327px;
+    font-weight: 700;
+  }
+  .flow-content {
+    height: 312px;
+  }
+  .flow-content > * + * {
+    margin-top: var(--flow-space, var(--spacer));
+  }
+  .center {
+    text-align: center;
+    padding: var(--spacer);
+  }
+  .center .subtitle {
+    line-height: 1.5;
+  }
+  .crowdfunder-logo + h1 {
+    margin-top: 0;
+  }
+  .center h1 {
+    color: var(--neutral-dark);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .crowdfunder-logo {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap, var(--spacer));
+  }
+
+  .bookmark label {
+    display: flex;
+    align-items: center;
+    background-color: var(--neutral-lightest);
+    position: relative;
+    padding-left: 4.5rem;
+    padding-right: 1.5rem;
+  }
+  .bookmark label span {
+    display: none;
+  }
+  .bookmark label {
+    padding: 0;
+  }
+  .bookmark label svg {
+    position: static;
+  }
+  /* .bookmark label svg {
+      position: absolute;
+      left: 0;
+    } */
+
+  .bookmark > input:checked + label {
+    color: var(--primary-dark);
+  }
+  .bookmark > input:checked + label svg circle {
+    fill: var(--primary-dark);
+  }
+  .bookmark > input:checked + label svg path {
+    fill: var(--neutral-white);
+  }
+  .btn-primary {
+    background-color: var(--primary-light);
+    color: var(--neutral-white);
+    font-weight: 700;
+    font-size: 16px;
+    border: 0;
+    border-radius: 33.5px;
+    width: 220px;
+    /* background-color: transparent; */
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: var(--primary-dark);
+  }
+
+  .btn-inactive {
+    /* background-color: var(--neutral-light); */
+    cursor: no-drop;
+    width: 150px;
+    padding: 20px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 33.5px;
+    background-color: var(--neutral-lighter);
+    color: var(--neutral-white);
+  }
+
+  button:active {
+    box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
+  }
+  /* stats  */
+  .stats {
+    text-align: center;
+    height: 412px;
+    margin-top: 1.5rem;
+    padding: 2rem 4rem;
+  }
+  .stats .flex div {
+    margin: 1em 0;
+    padding: 0;
+  }
+  .stats .flex div:not(:last-child):after {
+    content: "_________";
+    font-weight: 700;
+    color: var(--neutral-light);
+    width: 100px;
+  }
+  .stats .title {
+    color: var(--neutral-light);
+  }
+  .number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--neutral-dark);
+    line-height: 60px;
+  }
+  .progress-bar {
+    background-color: var(--neutral-lightest);
+    border-radius: 100vw;
+    margin-top: 2rem;
+    width: 279px;
+  }
+
+  .progress {
+    /* width: 89.914%; */
+    width: 218.27px;
+    height: 0.8rem;
+    background-color: var(--primary-light);
+    border-radius: 100vw;
+  }
+  /* large content */
+  #large-flow {
+    margin-top: 2rem;
+    padding: 2rem;
+    height: 1900px;
+  }
+  .paragraph-content {
+    color: var(--neutral-light);
+    line-height: 2;
+  }
+  .content-1 {
+    margin-top: 2rem;
+  }
+  .card {
+    border: 1px solid var(--neutral-lighter);
+    margin-top: 2rem;
+    padding: var(--spacer);
+    border-radius: 10px;
+    height: 370px;
+  }
+  .card .price {
+    color: var(--primary-light);
+    font-weight: 900;
+    line-height: 2;
+  }
+  .card p {
+    line-height:1.2;
+    color: var(--neutral-light);
+  }
+  .amount-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .number,
+  .amount-left span {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--neutral-dark);
+  }
+
+  .card .btn-primary {
+    width: 150px;
+    padding: 20px;
+  }
+
+ 
+}
