@@ -120,10 +120,58 @@ section{
     background-color: var(--primary-light);
     border-radius: 100vw;
   }
-
-
-
+/* flow content large */
+.flow-content {
+  padding: var(--spacer);
+}
+.flow-content h2{
+  line-height: 3;
+}
+.paragraph-content {
+  color: var(--neutral-light);
+  line-height: 1.5;
   
+}
+.content-1 {
+  margin-top: 2rem;
+}
+/* card bamboo */
+.card {
+  border: 1px solid var(--neutral-lighter);
+  padding: var(--spacer);
+  border-radius: 10px;
+  margin-bottom: var(--spacer);
+ 
+}
+.card .price {
+  color: var(--primary-light);
+  font-weight: 900;
+  line-height: 2;
+}
+.card p {
+  line-height: 1.5;
+  color: var(--neutral-light);
+}
+.card .flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+  .btn-inactive {
+    font-weight: 700;
+    font-size: 16px;
+    border: 0;
+    border-radius: 33.5px;
+    width:220px;
+    padding: 10px;
+    cursor: no-drop;
+    background-color: var(--neutral-lighter);
+    color: var(--neutral-white);
+}
+.inactive{
+  opacity: 0.4;
+}
+
 /* MOBILE */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .container {
