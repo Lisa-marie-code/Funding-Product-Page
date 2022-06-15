@@ -53,7 +53,7 @@ ul[role="list"] {
   font-weight: 700;
   font-size: 16px;
   border: 0;
-  border-radius: 33.5px;
+  /* border-radius: 33.5px; */
   width: 220px;
 }
 
@@ -279,11 +279,12 @@ section{
     justify-content: center;
     transform: translateY(-50%);
   }
+
   .row {
     display: flex;
     justify-content: space-between;
-    /* gap: var(--spacer); */
-    gap: 3rem;
+    /* gap: 3rem; */
+    padding: var(--spacer);
   }
 
   .bookmark label {
@@ -323,9 +324,9 @@ section{
     font-weight: 700;
     font-size: 16px;
     border: 0;
-    border-radius: 33.5px;
-    width:220px;
-    padding: 10px;
+    /* border-radius: 33.5px; */
+    /* width:220px; */
+    /* padding: 10px; */
   
   }
   .btn-primary:hover,
@@ -347,9 +348,9 @@ section{
   .inactive {
     opacity: 0.4;
   }
-  button{
+  /* button{
     padding: 1em 3em ;
-  }
+  } */
   button:active {
     box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
   }
@@ -358,17 +359,24 @@ section{
     text-align: center;
     height: 412px;
     margin-top: 1.5rem;
-    padding: 2rem 4rem;
+    padding: 0rem 4rem;
   }
   .stats .flex div {
-    margin: 1em 0;
+    margin: 0;
     padding: 0;
+  
+  }
+
+  .stats .flex{
+    display: block;
+    border: none;
   }
   .stats .flex div:not(:last-child):after {
     content: "_________";
     font-weight: 700;
     color: var(--neutral-light);
     width: 100px;
+    border-left: none;
   }
   .stats .title {
     color: var(--neutral-light);
@@ -382,7 +390,7 @@ section{
   .progress-bar {
     background-color: var(--neutral-lightest);
     border-radius: 100vw;
-    margin-top: 2rem;
+    margin-top: .5rem;
   }
 
   .progress {
