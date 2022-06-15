@@ -6,6 +6,7 @@
 body {
   font-family: "Commissioner", sans-serif;
   background-color: #fafafa;
+  position: relative;
 }
 :root {
   --primary-light: hsl(176, 50%, 47%);
@@ -18,20 +19,78 @@ body {
   --neutral-white: #fff;
 }
 
+/* DESKTOP */
+
+header {
+  background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%),
+    url(/images/image-hero-desktop.jpg);
+  background-repeat: no-repeat;
+  height: 27.14vw;
+  background-size: cover;
+} 
+
+.center {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+ul[role="list"] {
+  list-style: none;
+}
+main {
+  margin-top: -3.5rem;
+}
+section{
+  width: 50%;
+  margin: auto;
+  background-color: #fafafa;
+  border-radius: var(--spacer);
+}
+.crowdfunder-logo {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap, var(--spacer));
+  padding: 3rem;
+}
+
+
+
+
+/* MOBILE */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .container {
     width: 375px;
   }
-
+  body.overlay:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
   /* header styles */
-  header {
+   header {
     background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%),
       url(/images/image-hero-mobile.jpg);
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
     height: 76vw;
-  }
+  }  
+ 
+ 
   /* nav styles */
 
   .nav-list {
@@ -42,11 +101,9 @@ body {
     margin-bottom: 0;
     border-radius: 0.5rem;
     display: none;
+
   }
-  .nav-item {
-    flex-basis: unset;
-    padding-block: 0;
-  }
+  
   .nav-flex {
     display: flex;
     justify-content: space-between;
@@ -62,10 +119,14 @@ body {
     padding-block: 1rem;
     padding-inline: 1.5rem;
     text-decoration: none;
+    font-size: 0.9rem;
   }
   .nav-list.open {
     display: block;
   }
+  
+
+
   /* main */
   /* section */
   main {
@@ -78,7 +139,7 @@ body {
     border: 1px solid var(--neutral-lighter);
     margin: auto;
     width: 327px;
-    font-weight: 700;
+    font-weight: 600;
   }
   .flow-content {
     height: 312px;
@@ -92,6 +153,7 @@ body {
   }
   .center .subtitle {
     line-height: 1.5;
+    color: var(--neutral-light);
   }
   .crowdfunder-logo + h1 {
     margin-top: 0;
@@ -173,7 +235,9 @@ body {
     background-color: var(--neutral-lighter);
     color: var(--neutral-white);
   }
-
+  .inactive {
+    opacity: 0.4;
+  }
   button:active {
     box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
   }
@@ -207,12 +271,10 @@ body {
     background-color: var(--neutral-lightest);
     border-radius: 100vw;
     margin-top: 2rem;
-    width: 279px;
   }
 
   .progress {
-    /* width: 89.914%; */
-    width: 218.27px;
+    width: 89.914%;
     height: 0.8rem;
     background-color: var(--primary-light);
     border-radius: 100vw;
@@ -223,6 +285,7 @@ body {
     padding: 2rem;
     height: 1900px;
   }
+
   .paragraph-content {
     color: var(--neutral-light);
     line-height: 2;
@@ -243,7 +306,7 @@ body {
     line-height: 2;
   }
   .card p {
-    line-height:1.2;
+    line-height: 1.2;
     color: var(--neutral-light);
   }
   .amount-left {
@@ -263,6 +326,5 @@ body {
     width: 150px;
     padding: 20px;
   }
-
- 
 }
+
