@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 body {
   font-family: "Commissioner", sans-serif;
@@ -17,22 +18,20 @@ body {
   --neutral-lightest: hsl(0, 0%, 96%);
   --spacer: 1rem;
   --neutral-white: #fff;
+  --section-gap:2rem;
 }
 
 /* DESKTOP */
-
+/* header styles */
 header {
   background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%),
     url(/images/image-hero-desktop.jpg);
   background-repeat: no-repeat;
   height: 27.14vw;
   background-size: cover;
-} 
-
-.center {
-  text-align: center;
-  margin-bottom: 2rem;
 }
+
+/* nav styles */
 .nav-flex {
   display: flex;
   justify-content: space-between;
@@ -41,14 +40,39 @@ header {
 ul[role="list"] {
   list-style: none;
 }
+
+/* flow-content */
+.center .subtitle,
+.title {
+  line-height: 2.5;
+  color: var(--neutral-light);
+} 
+.btn-primary {
+  background-color: var(--primary-light);
+  color: var(--neutral-white);
+  font-weight: 700;
+  font-size: 16px;
+  border: 0;
+  border-radius: 33.5px;
+  width: 220px;
+}
+
+.center {
+  text-align: center;
+  /* margin-bottom: var(--section-gap); */
+}
+/* main */
+/* section */
 main {
   margin-top: -3.5rem;
 }
 section{
   width: 50%;
   margin: auto;
-  background-color: #fafafa;
-  border-radius: var(--spacer);
+  margin-bottom: var(--section-gap);
+  background-color: var(--neutral-white);
+  border-radius: 10px;
+  border: 1px solid var(--neutral-lighter);
 }
 .crowdfunder-logo {
   display: flex;
@@ -61,10 +85,45 @@ section{
   gap: var(--gap, var(--spacer));
   padding: 3rem;
 }
+/* stats */
+.stats .flex{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: var(--spacer);
+
+}
+ .stats .flex div{
+    position: relative;
+  padding: 1em 2em; 
+ }
+.stats .flex div:not(:first-child) {
+  border-left: 1px solid var(--neutral-lighter);
+
+}
+.number,
+  .amount-left span {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--neutral-dark);
+  }
+/* progress */
+  .progress-bar {
+    background-color: var(--neutral-lightest);
+    border-radius: 100vw;
+    margin: var(--spacer);
+  }
+  .progress {
+    width: 89.914%;
+    height: 0.8rem;
+    background-color: var(--primary-light);
+    border-radius: 100vw;
+  }
 
 
 
-
+  
 /* MOBILE */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   .container {
@@ -145,7 +204,7 @@ section{
     height: 312px;
   }
   .flow-content > * + * {
-    margin-top: var(--flow-space, var(--spacer));
+    margin-top: var(--spacer);
   }
   .center {
     text-align: center;
@@ -175,7 +234,8 @@ section{
   .row {
     display: flex;
     justify-content: space-between;
-    gap: var(--gap, var(--spacer));
+    /* gap: var(--spacer); */
+    gap: 3rem;
   }
 
   .bookmark label {
@@ -216,8 +276,9 @@ section{
     font-size: 16px;
     border: 0;
     border-radius: 33.5px;
-    width: 220px;
-    /* background-color: transparent; */
+    width:220px;
+    padding: 10px;
+  
   }
   .btn-primary:hover,
   .btn-primary:focus {
@@ -237,6 +298,9 @@ section{
   }
   .inactive {
     opacity: 0.4;
+  }
+  button{
+    padding: 1em 3em ;
   }
   button:active {
     box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
