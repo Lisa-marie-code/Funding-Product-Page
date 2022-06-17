@@ -1,5 +1,9 @@
 const body = document.querySelector('body')
 const mobile = document.querySelector('.mobile-menu');
+const modalContainer = document.querySelector('.modal-container');
+const buttons = document.querySelectorAll('main .btn-primary');
+// modalCover = container
+
 
 // Hamburger
 function openMobile(){
@@ -18,4 +22,15 @@ function closeMobile(){
     mobile.removeEventListener('click',closeMobile);
     mobile.addEventListener('click',openMobile);
     mobile.childNodes[0].src = "./images/icon-hamburger.svg"
+}
+
+// MODAL
+for(let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("click",openModal)
+}
+
+function openModal(){
+
+
+    modalContainer.style.display = "grid";
 }
