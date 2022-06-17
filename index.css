@@ -183,7 +183,6 @@ section{
 /* MODAL */
 .modal-container {
   display: none;
-  /* Set to grid by JS */
   position: fixed;
   z-index: 10;
   left: 0;
@@ -193,8 +192,17 @@ section{
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-
+.modal {
+  background-color:var(--neutral-white);
+  border-radius: 0.5rem;
+  position: relative;
+  padding: 1.5rem;
+  margin: auto;
+  width: 50%;
+}
+.close-modal{
+  float: right;
+}
 
 
 
