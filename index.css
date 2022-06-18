@@ -81,7 +81,7 @@ section{
   margin-bottom: var(--section-gap);
   background-color: var(--neutral-white);
   border-radius: 10px;
-  border: 1px solid var(--neutral-lighter);
+  border: 1px solid var(--neutral-lightest);
 }
 .crowdfunder-logo {
   display: flex;
@@ -204,6 +204,9 @@ section{
   float: right;
 }
 
+.card .pledge{
+  display: none;
+}
 
 
 
@@ -285,7 +288,7 @@ section{
     margin-bottom: 1.5rem;
     background-color: var(--neutral-white);
     border-radius: 0.5rem;
-    border: 1px solid var(--neutral-lighter);
+    border: 1px solid var(--neutral-lightest);
     margin: auto;
     width: 327px;
     font-weight: 600;

@@ -146,7 +146,7 @@
       <!-- modal -->
 
       <div class="modal-container">
-        <!-- start of white modal -->
+        <!-- start of  modalCover -->
          <div class="modalCover">
           <div id="modal-pledge" class="modal modal-pledge flow-content flow-content--large">
                  <div class="close-modal">
@@ -154,7 +154,7 @@
                  </div>
                  <h2>Back this project</h2>
                  <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-                 <!-- 1st pledge -->
+                 <!-- no-reward -->
                  <div class="rewards flow-content">
                   <div class="card" id="no-reward-card">
                    <div class="card-description">
@@ -166,12 +166,69 @@
                    </div>
                    <p class="description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
                    </div>
-                   <!-- end of 1st pledge 1st -->
+                   <!-- no reward pledge -->
+                   <div class="pledge" id="no-reward-pledge">
+                    <p>Enter your pledge</p>
+                    <label for="pledge1">$<input type="number" name="pledge" id="pledge1" value="1" /></label>
+                    <button class="btn-primary" id="pledge1submit">Continue</button>
+                 </div>
+                   <!-- end of no-reward -->
                   </div>
-
+                  <!-- bamboo stand -->
+                  <div class="card" id="bamboo-reward-card">
+                    <div class="card-description">
+                       <label for="bamboo-reward"></label>
+                       <input type="radio" name="reward" id="bamboo-reward" />
+                       <div class="flex">
+                          <h3>Bamboo Stand</h3>
+                          <p class="price">Pledge $25 or more</p>
+                       </div>
+                       <p class="description">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
+                       <p class="amount-left"><span>101</span>left</p>
+                    </div>
+                    <!-- bamboo pledge -->
+                    <div class="pledge" id="bamboo-reward-pledge">
+                       <p>Enter your pledge</p>
+                       <label for="pledge2">$<input type="number" name="pledge" id="pledge2" min="25" value="25" /></label>
+                       <button class="btn-primary" id="pledge2submit">Continue</button>
+                    </div>
+                 </div>
+                   <!-- black edition -->
+                   <div class="card" id="blackedition-reward-card">
+                    <div class="card-description">
+                      <label for="blackedition-reward"></label>
+                      <input type="radio" name="reward" id="blackedition-reward">
+                      <div class="flex">
+                        <h3>Black Edition Stand</h3>
+                        <p class="price">Pledge $75 or more</p>
+                      </div>
+                      <p class="description">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                      <p class="amount-left"><span>64</span>left</p>
+                    </div>
+                      <!-- black pledge -->
+                      <div class="pledge" id="blackedition-reward-pledge">
+                        <p>Enter your pledge</p>
+                        <label for="pledge-3"><input type="number" name="pledge" id="pledge-3" min="75" value="75"></label>
+                        <button class="btn-primary" id="pledge3submit">Continue</button>
+                      </div>
+                   </div>
+                   <!-- mahoganu stand -->
+                   <div class="card flow-content inactive">
+                    <div class="card-description">
+                       <input type="radio" name="reward" id="mahogany-reward" disabled />
+                       <div class="flex">
+                          <h3>Mahogany Special Edition</h3>
+                          <p class="price">Pledge $200 or more</p>
+                       </div>
+                       <p class="description">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                       <p class="amount-left"><span>0</span>left</p>
+                    </div>
+                 </div>
                  </div>
           </div>
+
          </div>
+         <!-- end of  modalCover -->
       </div>
       <!-- end of modal-->
     </div>

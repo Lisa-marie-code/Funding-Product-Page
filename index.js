@@ -2,6 +2,8 @@ const body = document.querySelector('body')
 const mobile = document.querySelector('.mobile-menu');
 const modalContainer = document.querySelector('.modal-container');
 const buttons = document.querySelectorAll('main .btn-primary');
+const radioButtons = document.querySelectorAll('modal input[type ="radio"]');
+const modalPledge = document.querySelector(".modal-pledge");
 // modalCover = container
 
 
@@ -29,8 +31,20 @@ for(let i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click",openModal)
 }
 
-function openModal(){
-
-
+function openModal(e){
+    if(e.target.id === "no-reward-btn"){
+        let radiobtns = document.querySelectorAll(".card input[type = 'radio']")
+    }
     modalContainer.style.display = "grid";
+
+}
+
+// radio pledges
+
+for (let i = 0; i < radioButtons.length; i++){
+    radioButtons[i].addEventListener("click",radioPledges)
+}
+
+function radioPledges(){
+    modalPledge.style.display = "block";
 }
