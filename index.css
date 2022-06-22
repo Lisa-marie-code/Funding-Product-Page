@@ -94,6 +94,49 @@ section{
   gap: var(--gap, var(--spacer));
   padding: 3rem;
 }
+ .bookmark label svg {
+      position: absolute;
+      left: 0;
+    } 
+    .bookmark label {
+      display: flex;
+      align-items: center;
+      background-color: var(--neutral-lightest);
+      position: relative;
+    }
+
+    .bookmark label span{
+      padding-left: var(--section-gap);
+    }
+    .bookmark svg{
+      cursor: pointer;
+    }
+    input,
+    .pledge > label,
+    .bookmark > label {
+      font-weight: 500;
+      /* display: inline-block; */
+      border-radius: 100vw;
+    }
+
+    button,
+.pledge > label,
+.bookmark > label {
+  padding: 1em 2em;
+}
+
+.bookmark > input:checked + label {
+  color: var(--primary-dark);
+}
+.bookmark > input:checked + label svg circle {
+  fill: var(--primary-dark);
+}
+.bookmark > input:checked + label svg path {
+  fill: var(--neutral-white);
+}
+
+
+
 /* stats */
 .stats .flex{
   display: flex;
@@ -166,6 +209,10 @@ section{
   justify-content: space-between;
 }
 
+
+.card.selected {
+  border-color: var(--clr-primary-light);
+}
   .btn-inactive {
     font-weight: 700;
     font-size: 16px;
@@ -203,9 +250,152 @@ section{
 .close-modal{
   float: right;
 }
-
+.close-modal:hover,
+.close-modal:focus {
+  cursor: pointer;
+}
+.close-modal:hover svg path,
+.close-modal:focus svg path {
+  opacity: 1;
+}
+.card.selected{
+  border-color:var(--primary-light) ;
+}
 .card .pledge{
   display: none;
+}
+.card.selected .pledge {
+  display: flex;
+}
+.card-description {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: -webkit-min-content 1.5em 1fr 1.5em -webkit-max-content;
+  -ms-grid-columns: min-content 1.5em 1fr 1.5em max-content;
+  grid-template-columns: -webkit-min-content 1fr -webkit-max-content;
+  grid-template-columns: min-content 1fr max-content;
+  -ms-grid-rows: -webkit-min-content 1.5em 1fr 1.5em -webkit-min-content;
+  -ms-grid-rows: min-content 1.5em 1fr 1.5em min-content;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+  grid-template-rows: min-content 1fr min-content;
+  gap: 1.5em;
+      grid-template-areas: "input name name" "desc desc desc" "amount amount amount";
+}
+.card-description input {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: input;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+.card-description .flex {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  --gap: 0.5rem;
+  grid-area: name;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card-description .description{
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: desc;
+}
+.card-description .amount-left {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: amount;
+}
+.card-description .amount-left span {
+  font-size: 1.2rem;
+}
+.card-description > label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+input[type=radio],
+.pledge > label {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid var(--neutral-lighter);
+  color: var(--neutral-lighter);
+}
+input[type=radio]:hover, input[type=radio]:focus-within,
+.pledge > label:hover,
+.pledge > label:focus-within {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+}
+
+input[type=number] {
+  border: none;
+  margin-left: 1em;
+}
+input[type=number]:focus-visible {
+  outline: none;
+}
+input[type=number]:invalid {
+  color: red;
+}
+
+input[type=radio] {
+  padding: 7px;
+  position: relative;
+}
+
+input[type=radio]::after {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-radius: 100vw;
+}
+
+input[type=radio]:checked::after {
+  background: var(--primary-light);
+}
+.pledge {
+  border-top: 1px solid var(--neutral-lighter);
+  margin-left: calc(var(--gap) * -1);
+  margin-right: calc(var(--gap) * -1);
+  padding-top: 1.5rem;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.pledge p {
+  padding-left: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+.pledge input {
+  width: 5ch;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.card .pledge {
+  display: none;
+}
+
+.card.selected .pledge {
+  display: flex;
 }
 
 
@@ -332,14 +522,6 @@ section{
     padding: var(--spacer);
   }
 
-  .bookmark label {
-    display: flex;
-    align-items: center;
-    background-color: var(--neutral-lightest);
-    position: relative;
-    padding-left: 4.5rem;
-    padding-right: 1.5rem;
-  }
   .bookmark label span {
     display: none;
   }
@@ -349,20 +531,13 @@ section{
   .bookmark label svg {
     position: static;
   }
-  /* .bookmark label svg {
-      position: absolute;
-      left: 0;
-    } */
+  
 
-  .bookmark > input:checked + label {
-    color: var(--primary-dark);
-  }
-  .bookmark > input:checked + label svg circle {
-    fill: var(--primary-dark);
-  }
-  .bookmark > input:checked + label svg path {
-    fill: var(--neutral-white);
-  }
+
+  /* .pledge > label,
+.bookmark > label {
+  padding: 1em 2em;
+} */
   .btn-primary {
     background-color: var(--primary-light);
     color: var(--neutral-white);
