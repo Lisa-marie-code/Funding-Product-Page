@@ -6,7 +6,10 @@ const radioButtons = document.querySelectorAll(".modal input[type ='radio']");
 const modalPledge = document.querySelector(".modal-pledge");
 const close = document.getElementById(".close-modal");
 const bookmark = document.querySelector(".bookmark input");
-var bookmarkText = document.querySelector(".bookmark label span");
+const bookmarkText = document.querySelector(".bookmark label span");
+const pledgeButtons = document.querySelectorAll(".pledge button");
+const amountBacked = 89914;
+const backers = 5007;
 // modalCover = container
 
 
@@ -95,6 +98,43 @@ if(e.target.id == "blackedition-reward"){
 
 
 
+//pledgeSubmit
+for(let i = 0; i < pledgeButtons.length; i++){
+  pledgeButtons[i].addEventListener('click',submitPledge)
+}
+function submitPledge(e){
+if(validateAmount(true)){
+  let rewardLeft = document.querySelectorAll(".rewards .amount-left");
+  if(e.target.id == "pledge1submit"){
+    let addedAmount = e.target.previousElementSibing.childNodes[1].value;
+    backers++;
+    updateBackers(addedAmount,backers);
+  }
+  if(e.target.id == "pledge2submit"){
+    let addedAmount = e.target.previousElementSibing.childNodes[1].value;
+    backers++;
+    rewardLeft[0].innerHTML = Number(rewardLeft[0].innerHTML) - 1;
+  }
+}
+}
+
+
+
+///update backers
+function updateBackers(amount,backers){
+  amountBacked += Number(amount);
+  document.querySelector(".amount .number span").innerHTML = amountBacked.toLocaleString("en-US");
+  if(amountBacked <= 100000){
+    document.querySelector(".progress").style.width = "calc(" + String(amountBacked) + " / 100000 * 100%)"
+   }else{
+    document.querySelector(".progress").style.width = "100%";
+   }
+   document.querySelector(".backers .number").innerHTML = backers.toLocaleString("en-US");
+}
+
+
+
+
 // remove selected
 function clearPledgeBoxes() {
     let pledgeBoxes = document.querySelectorAll(".card.selected");
@@ -118,8 +158,23 @@ function bookmarked(){
 
 
 
+//validate Form
+function validateAmount(){
+  let pledgevalid2 = document.getElementById("pledge2").value;
+  let pledgevalid3 = document.getElementById("pledge3").value;
+  if(pledgevalid2 == null || pledgevalid2 < 25){
+    alert("Pledge must be $25 or higher");
+    return false;
+  }
+  if(pledgevalid3 == null || pledgevalid3 < 75){
+    alert("Pledge must be $75 or higher");
+    return false;
+  }else{
+    return true;
+  }
 
-  
+}
+
 //closes modal
   close.addEventListener("click", closeModal);
 function closeModal() {

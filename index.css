@@ -389,7 +389,17 @@ input[type=radio]:checked::after {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
-
+.pledge label {
+  width: 125px;
+  margin-left: 1rem;
+  display: flex;
+  padding-left: 2em;
+}
+.pledge input {
+  width: 5ch;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
 .card .pledge {
   display: none;
 }
