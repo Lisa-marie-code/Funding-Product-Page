@@ -61,6 +61,7 @@ ul[role="list"] {
   border: 0;
   border-radius: 33.5px;
   width: 220px;
+  cursor: pointer;
 }
 .btn-primary:hover,
   .btn-primary:focus {
@@ -244,7 +245,7 @@ section{
   border-radius: 0.5rem;
   position: relative;
   padding: 1.5rem;
-  margin: auto;
+  margin: auto; 
   width: 50%;
 }
 .close-modal{
@@ -407,7 +408,9 @@ input[type=radio]:checked::after {
 .card.selected .pledge {
   display: flex;
 }
-
+.modal-success{
+  display: none;
+}
 
 
 
@@ -555,6 +558,7 @@ input[type=radio]:checked::after {
     font-size: 16px;
     border: 0;
     border-radius: 33.5px;
+    cursor: pointer;
     /* width:220px; */
     /* padding: 10px; */
   
@@ -679,6 +683,17 @@ input[type=radio]:checked::after {
   .card .btn-primary {
     width: 150px;
     padding: 20px;
+  }
+section,
+  .modal {
+    padding: 2.5rem;
+    
+  }
+  .modal h2{
+    text-align: left;
+  }
+  .close-modal + h2{
+    margin-top: 0;
   }
 }
 

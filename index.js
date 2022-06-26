@@ -4,10 +4,12 @@ const modalContainer = document.querySelector(".modal-container");
 const buttons = document.querySelectorAll("main .btn-primary");
 const radioButtons = document.querySelectorAll(".modal input[type ='radio']");
 const modalPledge = document.querySelector(".modal-pledge");
-const close = document.getElementById(".close-modal");
+const modalSuccess = document.querySelector(".modal-success");
+const closeSuccess = document.querySelector(".modal-success button");
+const close = document.querySelector(".close-modal");
 const bookmark = document.querySelector(".bookmark input");
 const bookmarkText = document.querySelector(".bookmark label span");
-const pledgeButtons = document.querySelectorAll(".pledge button");
+
 const amountBacked = 89914;
 const backers = 5007;
 // modalCover = container
@@ -99,9 +101,11 @@ if(e.target.id == "blackedition-reward"){
 
 
 //pledgeSubmit
+var pledgeButtons = document.querySelectorAll(".pledge button");
 for(let i = 0; i < pledgeButtons.length; i++){
   pledgeButtons[i].addEventListener('click',submitPledge)
 }
+
 function submitPledge(e){
 if(validateAmount(true)){
   let rewardLeft = document.querySelectorAll(".rewards .amount-left");
@@ -111,10 +115,22 @@ if(validateAmount(true)){
     updateBackers(addedAmount,backers);
   }
   if(e.target.id == "pledge2submit"){
-    let addedAmount = e.target.previousElementSibing.childNodes[1].value;
+    let addedAmount = e.target.previousElementSibling.childNodes[1].value;
     backers++;
     rewardLeft[0].innerHTML = Number(rewardLeft[0].innerHTML) - 1;
+    rewardLeft[3].innerHTML = Number(rewardLeft[3].innerHTML) - 1;
+         updateStats(addedAmount, backers);
   }
+  if (e.target.id == "pledge3submit") {
+    var addedAmount = e.target.previousElementSibling.childNodes[1].value;
+    backers++;
+    rewardLeft[1].innerHTML = Number(rewardLeft[1].innerHTML) - 1;
+    rewardLeft[4].innerHTML = Number(rewardLeft[4].innerHTML) - 1;
+    updateStats(addedAmount, backers);
+ }
+
+ modalPledge.style.display = "none";
+ modalSuccess.style.display = "block";
 }
 }
 
@@ -176,8 +192,14 @@ function validateAmount(){
 }
 
 //closes modal
-  close.addEventListener("click", closeModal);
+  close.addEventListener('click', closeModal);
+
 function closeModal() {
    modalContainer.style.display = "none";
 }
 
+//close modal-success
+closeSuccess.addEventListener('click',function(){
+  modalSuccess.style.display = "none";
+  closeModal();
+})
