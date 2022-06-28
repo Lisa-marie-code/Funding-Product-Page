@@ -44,8 +44,18 @@ display: none;
 ul[role="list"] {
   list-style: none;
   display: inline-flex;
-  
+  gap: var(--section-gap);
+ 
 }
+ul li a{
+  color: var(--neutral-white);
+  text-decoration: none;
+  font-weight: 600;
+}
+ul li a:hover{
+ text-decoration: underline;
+}
+
 
 /* flow-content */
 .center .subtitle,
@@ -152,8 +162,8 @@ section{
  }
 .stats .flex div:not(:first-child) {
   border-left: 1px solid var(--neutral-lighter);
-
 }
+
 .number,
   .amount-left span {
     font-size: 2rem;
@@ -280,7 +290,7 @@ section{
   grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   gap: 1.5em;
-      grid-template-areas: "input name name" "desc desc desc" "amount amount amount";
+  grid-template-areas: "input name name" "desc desc desc" "amount amount amount";
 }
 .card-description input {
   -ms-grid-row: 1;
@@ -318,7 +328,9 @@ section{
   width: 100%;
   height: 100%;
 }
-
+.card-description{
+  position: relative;
+}
 
 input[type=radio],
 .pledge > label {
@@ -390,6 +402,7 @@ input[type=radio]:checked::after {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
+
 .pledge label {
   width: 125px;
   margin-left: 1rem;
@@ -405,6 +418,13 @@ input[type=radio]:checked::after {
 }
 .modal-success{
   display: none;
+  width: 540px;
+  /* height: 449px; */
+  margin: 10rem 26rem 0 30rem ;
+  
+}
+.modal-success button{
+  margin: var(--section-gap);
 }
 
 
@@ -605,6 +625,8 @@ input[type=radio]:checked::after {
     font-weight: 700;
     color: var(--neutral-light);
     width: 100px;
+  }
+  .stats .flex div:not(:first-child) {
     border-left: none;
   }
   .stats .title {
@@ -632,7 +654,7 @@ input[type=radio]:checked::after {
   #large-flow {
     margin-top: 2rem;
     padding: 2rem;
-    height: 2000px;
+    height: 2100px;
    
   }
 
@@ -648,7 +670,8 @@ input[type=radio]:checked::after {
     margin-top: 2rem;
     padding: var(--spacer);
     border-radius: 10px;
-    height: 370px;
+    height: 400px;
+   
   }
   .card .price {
     color: var(--primary-light);

@@ -10,8 +10,8 @@ const close = document.querySelector(".close-modal");
 const bookmark = document.querySelector(".bookmark input");
 const bookmarkText = document.querySelector(".bookmark label span");
 
-const amountBacked = 89914;
-const backers = 5007;
+var amountBacked = 89914;
+var backers = 5007;
 // modalCover = container
 
 
@@ -110,7 +110,7 @@ function submitPledge(e){
 if(validateAmount(true)){
   let rewardLeft = document.querySelectorAll(".rewards .amount-left");
   if(e.target.id == "pledge1submit"){
-    let addedAmount = e.target.previousElementSibing.childNodes[1].value;
+    let addedAmount = e.target.previousElementSibling.childNodes[1].value;
     backers++;
     updateBackers(addedAmount,backers);
   }
@@ -119,14 +119,14 @@ if(validateAmount(true)){
     backers++;
     rewardLeft[0].innerHTML = Number(rewardLeft[0].innerHTML) - 1;
     rewardLeft[3].innerHTML = Number(rewardLeft[3].innerHTML) - 1;
-         updateStats(addedAmount, backers);
+         updateBackers(addedAmount, backers);
   }
   if (e.target.id == "pledge3submit") {
     var addedAmount = e.target.previousElementSibling.childNodes[1].value;
     backers++;
     rewardLeft[1].innerHTML = Number(rewardLeft[1].innerHTML) - 1;
     rewardLeft[4].innerHTML = Number(rewardLeft[4].innerHTML) - 1;
-    updateStats(addedAmount, backers);
+    updateBackers(addedAmount, backers);
  }
 
  modalPledge.style.display = "none";
