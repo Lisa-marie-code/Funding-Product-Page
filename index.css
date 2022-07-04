@@ -97,7 +97,7 @@ section{
 .crowdfunder-logo {
   display: flex;
   justify-content: center;
-  transform: translateY(-50%);
+  transform: translateY(-75%);
 }
 .row {
   display: flex;
@@ -419,10 +419,9 @@ input[type=radio]:checked::after {
 .modal-success{
   display: none;
   width: 540px;
-  /* height: 449px; */
-  margin: 10rem 26rem 0 30rem ;
-  
+  margin: 10rem 26rem 0 30rem;
 }
+
 .modal-success button{
   margin: var(--section-gap);
 }
@@ -528,6 +527,7 @@ input[type=radio]:checked::after {
   .crowdfunder-logo + h1 {
     margin-top: 0;
   }
+ 
   .center h1 {
     color: var(--neutral-dark);
     line-height: 1;
@@ -538,9 +538,7 @@ input[type=radio]:checked::after {
     line-height: 24px;
   }
   .crowdfunder-logo {
-    display: flex;
-    justify-content: center;
-    transform: translateY(-50%);
+    transform: translateY(-75%);
   }
 
   .row {
@@ -598,9 +596,7 @@ input[type=radio]:checked::after {
   .inactive {
     opacity: 0.4;
   }
-  /* button{
-    padding: 1em 3em ;
-  } */
+  
   button:active {
     box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
   }
@@ -702,6 +698,9 @@ input[type=radio]:checked::after {
     width: 150px;
     padding: 20px;
   }
+  .card{
+   height: 450px;
+  }
 section,
   .modal {
     padding: 2.5rem;
@@ -713,5 +712,17 @@ section,
   .close-modal + h2{
     margin-top: 0;
   }
+  .modal{
+    width: 90%;
+   padding: var(--spacer);
+   height: 2150px;
+   margin-top: var(--section-gap);
+  }
+  .modal-container{
+    height: 100%;
+  }
+ .modal-success{
+  margin: 0;
+ }
 }
 

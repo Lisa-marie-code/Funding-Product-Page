@@ -108,7 +108,7 @@ for(let i = 0; i < pledgeButtons.length; i++){
 
 function submitPledge(e){
 if(validateAmount(true)){
-  let rewardLeft = document.querySelectorAll(".rewards .amount-left");
+  let rewardLeft = document.querySelectorAll(".rewards .amount-left span");
   if(e.target.id == "pledge1submit"){
     let addedAmount = e.target.previousElementSibling.childNodes[1].value;
     backers++;
